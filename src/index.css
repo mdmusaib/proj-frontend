@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  @apply bg-light-bg text-slate-700 antialiased;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-green: #00A382;
+  --primary-blue: #004D7E;
+  --dark-blue: #002D4A;
+  --light-bg: #F7FAFC;
+  --text-primary: #002D4A;
+  --text-secondary: #4A5568;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  @apply text-dark-blue font-bold text-balance;
+}
+
+h1 { @apply text-4xl md:text-5xl font-extrabold; }
+h2 { @apply text-3xl md:text-4xl font-bold; }
+h3 { @apply text-2xl font-semibold; }
+h4 { @apply text-xl font-semibold; }
+p, li, span, a, div { @apply text-base; }
+
+p { 
+  @apply leading-relaxed text-slate-600 mb-4; 
+  line-height: 1.7;
+  text-align: justify; /* Default for paragraphs */
+}
+
+/* Specific overrides for text that should not be justified */
+.text-justify-none {
+    text-align: unset;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-green via-primary-blue to-dark-blue bg-clip-text text-transparent;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-green-50 via-blue-50 to-white;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.btn-primary {
+    @apply bg-primary-green text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-primary-green/90 transition-all duration-300 hover:shadow-lg focus:ring-2 focus:ring-primary-green/50 focus:ring-offset-2;
+}
+
+.btn-secondary {
+    @apply bg-primary-blue text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-primary-blue/90 transition-all duration-300 hover:shadow-lg focus:ring-2 focus:ring-primary-blue/50 focus:ring-offset-2;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* Prose styles for rendered HTML content */
+.prose {
+    @apply text-slate-600;
+}
+.prose h2 {
+    @apply text-2xl font-bold mt-8 mb-4 text-primary-blue;
+    text-align: left; /* Headings in prose content should be left-aligned */
+}
+.prose ul {
+    @apply list-disc pl-6 space-y-2;
+}
+.prose li {
+    @apply text-slate-600;
+}
+.prose p {
+    @apply text-justify; /* Ensure paragraphs within prose are justified */
+}
+
+@layer base {
+  :root {
+    --background: 240 5% 96%; /* #F4F4F5 - light-bg */
+    --foreground: 215 28% 17%; /* #27374D - dark-blue-ish */
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    --primary: 204 100% 25%; /* #004D7E - primary-blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 169 100% 32%; /* #00A382 - primary-green */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 9% 96%;
+    --muted-foreground: 215 14% 47%;
+    --accent: 220 9% 96%;
+    --accent-foreground: 215 28% 17%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 204 100% 25%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
